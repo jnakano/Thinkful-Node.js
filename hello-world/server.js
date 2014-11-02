@@ -1,7 +1,12 @@
 var http= require('http');
 var server = http.createServer(function(req,res){
-	res.write("hello world");
-	res.end();
+	var url = 'http://thinkful.com';
+	var body = '<span> Redirecting to <a href="' + url + '">' + url + '</a> </span>';
+	res.statusCode = 302;
+	var body = "Hello World";
+	res.setHeader('Content-Length',body.length);
+	res.setHeader('Content-Type','text/plain');
+	res.end(body); 
 
 })
 
