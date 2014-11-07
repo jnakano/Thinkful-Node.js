@@ -11,10 +11,13 @@
 					<span class="delete">&times;</span>
 
 				</div>
-				<div class="info">
-					<header class="name">{{name}}</header>
-					<p class="description">{{description}}</p>
-				</div>
+				<a href="/{{id}}">
+					<div class="info">
+						<header class="name">{{name}}</header>
+						<p class="description">{{description}}</p>
+					</div>
+				</a>
+				
 			</li>
 
 		{{/each}}

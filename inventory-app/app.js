@@ -25,6 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.route('/')
     //list all our inventory items
     .get(inventory.list);
+app.route('/:id')
+    //view a single item
+    .get(inventory.show);
+
 app.get('/',function(req,res){
     res.render('index',{title:'Express'});
 })
