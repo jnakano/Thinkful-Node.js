@@ -24,10 +24,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.route('/')
     //list all our inventory items
-    .get(inventory.list);
+    .get(inventory.list)
+    //create new inventory items
+    .post(inventory.create);
+
+app.get('/new', inventory.new);
 app.route('/:id')
     //view a single item
-    .get(inventory.show);
+    .get(inventory.show)
+    //update a single item
+    .post(inventory.update)
+    //delete a single item
+    .delete(inventory.delete);
+
+app.route('/:id/edit')
+    // open edit form
+    .get(inventory.edit)
 
 app.get('/',function(req,res){
     res.render('index',{title:'Express'});
